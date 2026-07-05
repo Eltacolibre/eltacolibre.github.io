@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eltacolibre.github.io/sitemap.xml

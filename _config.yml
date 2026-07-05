@@ -1,0 +1,31 @@
+title: The Context Window
+tagline: AI news, without the hype
+description: >-
+  Independent coverage of artificial intelligence — model releases, research,
+  policy, and industry moves — explained in plain language.
+url: "https://eltacolibre.github.io"
+baseurl: ""
+lang: en
+
+author:
+  name: Yannick Gueye
+  email: yannick.gueye@gmail.com
+
+permalink: /:title/
+markdown: kramdown
+timezone: Etc/UTC
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  posts_limit: 20
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

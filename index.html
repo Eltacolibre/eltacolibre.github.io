@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{% assign latest = site.posts.first %}
+{% if latest %}
+<section class="featured">
+  <p class="post-meta"><span class="kicker">Latest</span> · <time datetime="{{ latest.date | date_to_xmlschema }}">{{ latest.date | date: "%B %-d, %Y" }}</time></p>
+  <h2 class="featured-title"><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></h2>
+  <p class="featured-dek">{{ latest.description | default: latest.excerpt | strip_html | truncate: 220 }}</p>
+  <p><a class="readmore" href="{{ latest.url | relative_url }}">Read the article &rarr;</a></p>
+</section>
+{% endif %}
+
+<section class="feed" aria-label="All articles">
+  <h2 class="feed-heading">All articles</h2>
+  <ul class="post-list">
+    {% for post in site.posts %}
+    <li>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+      <div>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <p class="post-summary">{{ post.description | default: post.excerpt | strip_html | truncate: 160 }}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
